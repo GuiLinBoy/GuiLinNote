@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* 你自己的样式 */
+/*分页*/
+	.fenye{
+		text-align: right;
+		margin-top: 20px;
+		margin-right: 50px;
+	}
+	.fenye a{
+		text-decoration: none;
+		border: 1px solid #F9D52B;
+		padding: 5px 7px;
+		color: #767675;
+	}
+

@@ -1,0 +1,204 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit|ie-comp|ie-stand">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<script type="text/javascript" src="lib/PIE_IE678.js"></script>
+<![endif]-->
+		<link href="../css/H-ui.min.css" rel="stylesheet" type="text/css" />
+		<link href="../css/H-ui.admin.css" rel="stylesheet" type="text/css" />
+		<link href="../lib/icheck/icheck.css" rel="stylesheet" type="text/css" />
+		<link href="../lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
+		<link href="../lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
+		<!--[if IE 6]>
+<script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+		<title>详细资料</title>
+	</head>
+
+	<body>
+		<div class="pd-20" style="">
+			<form action="" method="post" class="form form-horizontal" id="form-article-add" style="">
+				<div class="row cl">
+					<label class="form-label col-3"><span class="c-red">*</span>姓名：</label>
+					<div class="formControls col-5">
+						<input type="text" class="input-text" value="" placeholder="" id="member-name" name="member-name" datatype="*2-16" nullmsg="用户名不能为空">
+					</div>
+					<div class="col-4"> </div>
+				</div>
+				<div class="row cl">
+					<label class="form-label col-3"><span class="c-red">*</span>性别：</label>
+					<div class="formControls col-5 skin-minimal">
+						<div class="radio-box">
+							<input type="radio" id="sex-1" name="sex" datatype="*" nullmsg="请选择性别！">
+							<label for="sex-1">男</label>
+						</div>
+						<div class="radio-box">
+							<input type="radio" id="sex-2" name="sex">
+							<label for="sex-2">女</label>
+						</div>
+					</div>
+				</div>
+				<div class="row cl">
+					<label class="form-label col-3"><span class="c-red">*</span>联系电话：</label>
+					<div class="formControls col-5">
+						<input type="text" class="input-text" value="" placeholder="" id="member-name" name="member-name" datatype="*2-16" nullmsg="用户名不能为空">
+					</div>
+					<div class="col-4"> </div>
+				</div>
+				<div class="row cl">
+					<label class="form-label col-3"><span class="c-red">*</span>服务项目：</label>
+					<div class="formControls col-5">
+						<input type="text" class="input-text" value="" placeholder="" id="member-name" name="member-name" datatype="*2-16" nullmsg="用户名不能为空">
+					</div>
+					<div class="col-4"> </div>
+				</div>
+				<div class="row cl">
+					<label class="form-label col-3"><span class="c-red">*</span>花费：</label>
+					<div class="formControls col-5">
+						<input type="text" class="input-text" value="" placeholder="单位/元" id="member-name" name="member-name" datatype="*2-16" nullmsg="用户名不能为空">
+					</div>
+					<div class="col-4"> </div>
+					
+				</div>
+				<!--积分-->
+				<!--<div class="row cl">
+					<label class="form-label col-3"><span class="c-red">*</span>积分：</label>
+					<div class="formControls col-5">
+						<input type="text" class="input-text" value="" style="width: 120px;" placeholder="" id="member-name" name="member-name" datatype="*2-16" nullmsg="用户名不能为空">
+					</div>
+					<div class="col-4"> </div>
+				</div>-->
+		<div class="row cl"> 
+		 <label class="form-label col-3"><span class="c-red">*</span>日期范围：</label>
+		<!--<input type="text" onclick="WdatePicker(dateFmt:'yyyy/MM/dd')" id="logmin"  style="width:120px;" class="input-text Wdate">-->
+			<input class="input-text Wdate" type="text" id="login" onclick="WdatePicker({isShowClear:false,readOnly:true,lang:'zh-cn'})" style="width:120px;" />
+		<!--<input type="text" class="Wdate" id="logmin" style="width:120px;" class="input-text Wdate" onclick="WdatePicker({isShowWeek:true,onpicked:function() {$dp.$('d122_1').value=$dp.cal.getP('W','W');$dp.$('d122_2').value=$dp.cal.getP('W','WW');}})"/>-->
+		<!---
+		<input type="text" onfocus="WdatePicker({minDate:'#F{$dp.$D(\'logmin\')}',maxDate:'%y-%M-%d'})" id="logmax" class="input-text Wdate" style="width:120px;">-->
+	</div>
+				<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l">左眼</span></div>
+				<div class="mt-20">
+					<label class="form-label col-3" style="text-align: right;margin-top: 20px;"><span class="c-red">*</span>球镜:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+					<div class="formControls col-2" style="margin-top: 20px;">
+						<input type="text" class="input-text" value="" placeholder="" id="" name="" style="text-align: center;">
+					</div>
+					<label class="form-label col-3" style="text-align: right;margin-top: 20px;"><span class="c-red">*</span>柱镜:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+					<div class="formControls col-2" style="margin-top: 20px;">
+						<input type="text" class="input-text" value="" placeholder="" id="" name="">
+					</div>
+					<label class="form-label col-3" style="text-align: right;margin-top: 20px;"><span class="c-red">*</span>轴位:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+					<div class="formControls col-2" style="margin-top: 20px;">
+						<input type="text" class="input-text" value="" placeholder="" id="" name="">
+					</div>
+					<label class="form-label col-3" style="text-align: right;margin-top: 20px;"><span class="c-red">*</span>矫正视力:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+					<div class="formControls col-2" style="margin-top: 20px;">
+						<input type="text" class="input-text" value="" placeholder="" id="" name="">
+					</div>
+				</div>
+				<div style="margin:auto;" class="col-12">
+					<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l">左眼</span></div>
+				</div>
+
+				<div class="mt-20">
+					<label class="form-label col-3" style="text-align: right;margin-top: 20px;"><span class="c-red">*</span>球镜:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+					<div class="formControls col-2" style="margin-top: 20px;">
+						<input type="text" class="input-text" value="" placeholder="" id="" name="">
+					</div>
+					<label class="form-label col-3" style="text-align: right;margin-top: 20px;"><span class="c-red">*</span>柱镜:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+					<div class="formControls col-2" style="margin-top: 20px;">
+						<input type="text" class="input-text" value="" placeholder="" id="" name="">
+					</div>
+					<label class="form-label col-3" style="text-align: right;margin-top: 20px;"><span class="c-red">*</span>轴位:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+					<div class="formControls col-2" style="margin-top: 20px;">
+						<input type="text" class="input-text" value="" placeholder="" id="" name="">
+					</div>
+					<label class="form-label col-3" style="text-align: right;margin-top: 20px;"><span class="c-red">*</span>矫正视力:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+					<div class="formControls col-2" style="margin-top: 20px;">
+						<input type="text" class="input-text" value="" placeholder="" id="" name="">
+					</div>
+				</div>
+				<div style="margin:auto;" class="col-12">
+					<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l">其他</span></div>
+				</div>
+
+				<div class="mt-20">
+					<label class="form-label col-3" style="text-align: right;margin-top: 20px;"><span class="c-red">*</span>瞳距:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+					<div class="formControls col-2" style="margin-top: 20px;">
+						<input type="text" class="input-text" value="" placeholder="" id="" name="">
+					</div>
+					<label class="form-label col-3" style="text-align: right;margin-top: 20px;"><span class="c-red">*</span>验光时间:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+					<div class="formControls col-2" style="margin-top: 20px;">
+						<input type="text" class="input-text" value="" placeholder="" id="" name="">
+					</div>
+				</div>
+				<!--图片上传-->
+				<div class="mt-20 col-12">
+					<label class="form-label col-2" style="text-align: right;margin-top: 20px;"><span class="c-red">*</span>上传诊断图片:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+					<div class="formControls col-10">
+						<div class="uploader-list-container">
+							<div class="queueList">
+								<div id="dndArea" class="placeholder">
+									<div id="filePicker-2" class="webuploader-container">
+										<div class="webuploader-pick">点击选择图片</div>
+										<div id="rt_rt_1cv01pg5ar6luscko4g0t1fbj6" style="position: absolute; top: 20px; left: 0px; width: 168px; height: 44px; overflow: hidden; bottom: auto; right: auto;"><input type="file" name="file" class="webuploader-element-invisible" multiple="multiple"><label style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label></div>
+									</div>
+									<p>或将照片拖到这里，单次最多可选300张</p>
+								</div>
+								<ul class="filelist"></ul>
+							</div>
+							<div class="statusBar" style="display:none;">
+								<div class="progress" style="display: none;"> <span class="text">0%</span> <span class="percentage" style="width: 0%;"></span> </div>
+								<div class="info">共0张（0B），已上传0张</div>
+								<div class="btns">
+									<div id="filePicker2" class="webuploader-container">
+										<div class="webuploader-pick">继续添加</div>
+										<div id="rt_rt_1cv01pg5c1gu21d3c194lsa11opf9" style="position: absolute; top: 0px; left: 0px; width: 38px; height: 2px; overflow: hidden; bottom: auto; right: auto;"><input type="file" name="file" class="webuploader-element-invisible" multiple="multiple"><label style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label></div>
+									</div>
+									<div class="uploadBtn state-pedding">开始上传</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<script type="text/javascript" src="../lib/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" src="../lib/layer/1.9.3/layer.js"></script>
+		<script type="text/javascript" src="../lib/icheck/jquery.icheck.min.js"></script>
+		<script type="text/javascript" src="../lib/Validform/5.3.2/Validform.min.js"></script>
+		<script type="text/javascript" src="../lib/webuploader/0.1.5/webuploader.min.js"></script>
+		<script type="text/javascript" src="../lib/ueditor/1.4.3/ueditor.config.js"></script>
+		<script type="text/javascript" src="../lib/ueditor/1.4.3/ueditor.all.min.js"></script>
+		<script type="text/javascript" src="../lib/My97DatePicker/WdatePicker.js"></script> 
+		<script type="text/javascript" src="../lib/My97DatePicker/lang/zh-cn.js"></script> 
+		<script type="text/javascript" src="../lib/My97DatePicker/lang/zh-tw.js"></script> 
+        <script type="text/javascript" src="../lib/datatables/1.10.0/jquery.dataTables.min.js"></script> 
+		<script type="text/javascript" src="../lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+		<script type="text/javascript" src="../js/H-ui.js"></script>
+		<script type="text/javascript" src="../js/H-ui.admin.js"></script>
+		<script type="text/javascript">
+			$(function() {
+						/*用户-删除*/
+						function member_del(obj, id) {
+							layer.confirm('确认要删除吗？', function(index) {
+								$(obj).parents("tr").remove();
+								layer.msg('已删除!', {
+									icon: 1,
+									time: 1000
+								});
+							});
+						}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="BoHong"
+  id="myeclipse.1545618886457"
+  context-root="/BoHong"
+  j2ee-spec="5.0"
+  archive="BoHong.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

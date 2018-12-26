@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+
+<struts>
+	<!--  最大上传文件总数配置成1G -->
+	<constant name="struts.multipart.maxSize" value="1177637120"></constant>
+	<constant name="struts.i18n.encoding" value="utf-8" />
+	<!-- 设置上传文件的临时文件夹,默认使用javax.servlet.context.tempdir -->
+    <constant name="struts.multipart.saveDir " value="d:/tmp"/>
+    
+	<package name="file" namespace="/" extends="struts-default">
+		<action name="download"
+			class="com.tairui.common.DownloadAction">
+			<result name="fileNotFound">
+				errors/filenotfound.jsp
+			</result>
+			<result name="success" type="stream">
+				<!-- 动态文件下载的，当不知道文件类型时值设置成为：application/octet-stream;charset=ISO8859-1 ，
+				注意一定要加入charset，否则某些时候会导致下载的文件出错； 
+				<param name="contentType">
+					application/octet-stream;charset=ISO8859-1
+					</param>  	 -->
+				<param name="contentDisposition">
+					attachment;filename="${fileRealName}"
+				</param>
+				<param name="inputName">inputStream</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+		<action name="verifyCode"
+			class="com.tairui.common.VerifyCodeAction">
+			<result type="stream">
+				<param name="contentType">image/jpeg</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- <action name="upload" class="com.tairui.common.UploadAction" method="upload">
+            动态设置savePath的属性值
+            <param name="savePath">/tempfile</param>
+            <result name="success">/WEB-INF/page/message.jsp</result>
+            </action> -->
+        <action name="saveFile" class="com.tairui.common.BaseSupportAction" method="saveFile">
+			<result >/index.jsp</result>
+		</action>
+        
+       
+	</package>
+</struts>
